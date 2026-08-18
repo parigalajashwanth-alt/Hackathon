@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | AI Educational Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">Nexus<span>.ai</span></div>
+            <p class="subtitle">Elevating the feed from mindless scrolling to targeted learning.</p>
+        </header>
+
+        <main class="dashboard">
+            <section class="input-section">
+                <div class="section-header">
+                    <h2>Recent Watch History</h2>
+                    <p class="section-desc">Select a Reel the student recently engaged with to trigger the AI inference engine.</p>
+                </div>
+                <div class="reel-list" id="reel-list">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <section class="analysis-section" id="analysis-section">
+                <div class="empty-state" id="empty-state">
+                    <div class="pulse-ring"></div>
+                    <p>Select a Reel to begin analysis...</p>
+                </div>
+                
+                <div class="analysis-content hidden" id="analysis-content">
+                    <div class="analysis-header">
+                        <div class="title-group">
+                            <h2>Inference Result</h2>
+                            <span class="badge processing" id="status-badge">Analyzed</span>
+                        </div>
+                    </div>
+
+                    <div class="card current-reel-card">
+                        <span class="label">CURRENT REEL</span>
+                        <h3 id="out-current">...</h3>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="card">
+                            <span class="label">INTEREST DETECTED</span>
+                            <h4 id="out-interest" class="gradient-text">...</h4>
+                        </div>
+                        <div class="card">
+                            <span class="label">CONFIDENCE</span>
+                            <h4 id="out-confidence">...</h4>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="label">WHY (EVIDENCE)</span>
+                        <p id="out-why">...</p>
+                    </div>
+
+                    <div class="recommendation-box">
+                        <div class="rec-header">
+                            <div class="icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            </div>
+                            <h3>Recommended Tech Reel</h3>
+                        </div>
+                        
+                        <h2 id="out-rec-title" class="rec-title">...</h2>
+                        
+                        <div class="tags">
+                            <span class="tag category-tag" id="out-category">...</span>
+                            <span class="tag difficulty-tag" id="out-difficulty">...</span>
+                        </div>
+
+                        <div class="why-rec">
+                            <span class="label">WHY THIS RECOMMENDATION (AVOIDING THE TRAP)</span>
+                            <p id="out-why-rec">...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
